@@ -10,7 +10,7 @@ import {
 import useGenres from "../hooks/useGenres";
 import getCroppedImage from "../services/image-url";
 
-const GenreList = ({ onSelectGenre }) => {
+const GenreList = ({ onSelectGenre, selectedGenre }) => {
   const { data, isLoading, error } = useGenres();
   if (error) return null;
   if (isLoading) return <Spinner />;
@@ -29,6 +29,7 @@ const GenreList = ({ onSelectGenre }) => {
                 onClick={() => onSelectGenre(genre)}
                 fontSize="lg"
                 variant="link"
+                fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
               >
                 {genre.name}
               </Button>
