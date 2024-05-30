@@ -7,8 +7,12 @@ import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
 
-const GameGrid = ({ selectedPlatform, selectedGenre }) => {
-  const { data, error, isLoading } = useGames(selectedGenre, selectedPlatform);
+const GameGrid = ({ selectedPlatform, selectedGenre, sortSelectedOrder }) => {
+  const { data, error, isLoading } = useGames(
+    selectedGenre,
+    selectedPlatform,
+    sortSelectedOrder
+  );
   const skeletons = [1, 2, 3, 4, 5, 6];
   {
     error && <Text color="red">{error}</Text>;
