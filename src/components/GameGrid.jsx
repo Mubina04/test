@@ -7,11 +7,11 @@ import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
 
-const GameGrid = ({ selectedPlatform, selectedGenre, sortSelectedOrder }) => {
+const GameGrid = ({ selectedPlatform, selectedGenre, sortOrder }) => {
   const { data, error, isLoading } = useGames(
     selectedGenre,
     selectedPlatform,
-    sortSelectedOrder
+    sortOrder
   );
   const skeletons = [1, 2, 3, 4, 5, 6];
   {
